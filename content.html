@@ -1,0 +1,346 @@
+  <style>
+  body,p{
+      font-size:17px;
+} 
+      
+  }
+  #currenttz {
+    hheight: 70px;
+    gwidth: 200px;
+    font-size: 8px;
+    border-radius: 1px;
+    border: none;
+    //outline: 1px;
+    cursor: pointer;
+      //  background-color: #FFFFFF;
+    color: red;   
+}
+
+#current-weather-details:hover {
+    //background-color: grey;
+    //color: #FFFFFF;
+      cursor: pointer;
+
+}
+#currenttz,#current-weather-details{
+        cursor: pointer;
+    
+}
+#temperature-icon,#current-icon,#download-icon{
+width:24px;
+}
+#money-icon{
+width:10px;
+}
+#disp,#current-weather-details,#curr{
+    font-size:13px;
+}
+#currenttz  {cursor: pointer;}
+input[type=text]{
+    padding: 0px 0px;
+       border: none;
+       border-bottom: 1px solid grey;
+       padding: 0px 3px;
+       width:10%;
+    
+}
+  </style>
+  <title>datayoung</title>
+     
+    
+       <span id=disp>clocking...</span>:
+        <span id="current-weather-details" onclick="showWeather()" >
+			 <span><img id="current-icon"></span>
+			 <span id="weather-summary"><img id="download-icon">~Weather BKK</span>
+			  <img id="temperature-icon" ><a id="current-temperature"></a>
+             <a id="current-humidity"></a>
+             <a id="current-pressure"></a>
+             <a id="current-uvIndex"></a>
+             <span id="currenttz" onclick="showWeather()"></span>
+        </span>
+
+	<script type="text/javascript" src="http://currencyconverter.55uk.net/currency_converter_json.js"></script>
+	<script type="text/javascript">
+	function getMyRate(jData) {
+		if (jData == null) {
+			alert("There was a problem parsing search results.");
+			return;
+		}
+		var myval = jData.ResultSet;
+		var mydiv = jData.xxMyDiv;
+		document.getElementById(mydiv).innerHTML =  myval;
+	}
+
+	</script>
+	<spab id=curr><img id="money-icon"></span>
+	1GBP=<script type="text/javascript">getExchangeRates('1','GBP','EUR','true')</script> EUR,
+	<script type="text/javascript">getExchangeRates('1','GBP','USD','true')</script> USD,
+	1USD=<script type="text/javascript">getExchangeRates('1','USD','JPY','false')</script> JPY,
+	1USD=<script type="text/javascript">getExchangeRates('1','USD','THB','false')</script> THB
+	
+<form name="temperature_input">
+Celsius: <input type="text" id="celsiusValue" name="celsius" style=" width: 50px;" onkeyup="converttemperature(this.value, 'C')">
+Fahrenheit:<input type="text" id="fahrenheitValue" name="fahrenheit" style=" width: 50px;" onkeyup="converttemperature(this.value, 'F')" onchange="converttemperature(this.value, 'F')">
+Kelvin: <input type="text" id="kelvinValue" name="kelvin" style=" width: 50px;" onkeyup="converttemperature(this.value, 'K')">
+</form>
+</span>
+<iframe width=100% height=70% src="https://www.youtube.com/embed/J78SdCzzumA?list=PLRrf17rCVaDF4ZIHpgnGTydXYGwcnsdSp" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+    <p>
+DIRECTORY link will open new windows
+<a href="https://wikivisually.com/" target="_blank">wikivisually</a>
+<a href="https://steamdb.info/" target="_blank">steamdb</a>
+<a href="https://arstechnica.com/" target="_blank">arstechnica</a>
+<a href="https://www.pinterest.com/" target="_blank">pinterest</a>
+<a href="https://data.gov.sg/" target="_blank">data.gov.sg</a>
+<a href="https://www.data.gov/open-gov/" target="_blank">Opengov</a>
+<a href="http://www.sciencemag.org/" target="_blank">SciMag</a>
+<a href="http://isithacked.com/check/" target="_blank">ishacked</a>
+<a href="https://developers.google.com/chart/" target="_blank">char-gg</a>
+<a href="https://en.oxforddictionaries.com/grammar/grammar-a-z" target="_blank">oxford</a>
+<a href="http://www.yahoo.com" target="_blank">yahoo</a>
+<a href="https://www.bbc.com/news"  target="_blank">BBC</a>
+<a href="https://theaseanpost.com/" target="_blank">theaseanpost</a>
+<a href="https://edition.cnn.com/" target="_blank">cnn</a>
+<a href="https://www.python.org/" target="_blank">python</a>
+<a href="https://www.ruby-lang.org/en/" target="_blank">ruby</a>
+<a href="https://www.docker.com/" target="_blank">docker</a>
+<a href="https://nodejs.org/en/" target="_blank">nodejs</a>
+<a href="https://reactjs.org/" target="_blank">reactjs</a>
+<a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank">c#</a>
+<a href="https://techbeacon.com/" target="_blank">techbeacon</a>
+<a href="https://stackoverflow.com" target="_blank">stackoverflow</a>
+<a href="https://vpscontrol.nfphosting.com:4083/#act=listvs&" target="_blank">8vps</a>
+<a href="https://www.alpharacks.com/myrack/clientarea.php?action=services" target="_blank">alpharack</a>
+<a href="https://portal.nfphosting.com/clientarea.php" target="_blank">nfp</a>
+<a href="https://portal.nfphosting.com/clientarea.php" target="_blank">nfp</a>
+<a href="https://www.support-billing.com/clientarea.php" target="_blank">QX</a>
+<a href="http://m.facebook.com/" target="_blank">facebook</a>
+<a href="https://www.ssllabs.com/ssltest/" target="_blank">ssltest</a>
+<a href="https://uimovement.com/" target="_blank">UImovement</a>
+<a href="https://github.com/thednp/bootstrap.native" target="_blank">bootstrap.native</a>
+<a href="https://goo.gl/qXHh9e" target="_blank">engl3tha</a>
+LIVE:
+<a href="https://www.youtube.com/watch?v=Ga3maNZ0x0w"  target="_blank">Bloomberg Global News</a>
+<a href="https://www.youtube.com/watch?v=Fu2etwHzcvw"  target="_blank">JapaNews24</a>
+<a href="https://www.youtube.com/watch?v=m5Nst2zMZVY"  target="_blank">DW Live</a>
+<a href="https://www.youtube.com/watch?v=yk2CUjbyyQYtarget="_blank">Taiwan TTVnews</a>
+<a href="https://www.youtube.com/watch?v=lpBAE0Z0INI   target="_blank">AJa</a>
+<a href="https://www.youtube.com/watch?v=2oG7ZbZnTcA"  target="_blank">QVC</a>
+<a href="https://www3.nhk.or.jp/nhkworld/en/live/?cid=nwd-adwords-sitelink-live-nonbrand"  target="_blank">nhk</a>
+<a href="https://www.youtube.com/watch?v=2oG7ZbZnTcA"  target="_blank">QVC</a>
+<a href="https://www.youtube.com/watch?v=hKllcUnXd9k" target="_blank">ASAKUSA</a>
+</p>
+
+<hr>
+</center>
+<script>
+function clk() {
+        var a=new Date();   
+		//var d = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+        document.getElementById("disp").innerHTML=a.getFullYear()+"/"+(a.getMonth()+1)+"/"+a.getDate()+" "+a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds() ;
+       setTimeout(clk,1000);
+    }
+clk();
+
+function converttemperature(temperature, typeScale){
+     
+var Celsius, Kelvin, Fahrenheit;
+     
+switch (typeScale){
+ case "F":
+  Fahrenheit = temperature;
+  if (temperature){
+   Celsius = ((5/9) * (temperature-32));
+   Kelvin = ((5/9)*(temperature-32) + 273)
+  }else{    
+   Celsius = "";
+   Kelvin = "";
+  }
+  Kelvin = Kelvin.toFixed(2)
+  Celsius = Celsius.toFixed(2)
+ break;
+     case "K":
+  Kelvin = temperature;
+   if (temperature){
+    Celsius = Kelvin - 273;
+    Fahrenheit = ((Celsius * 9/5) + 32)
+   }else{
+    Fahrenheit = '';
+    Kelvin = '';
+   }
+  Fahrenheit = Fahrenheit.toFixed(2)
+  Celsius = Celsius.toFixed(2)
+ break;
+ case "C":
+  Celsius = temperature;
+  if (temperature){
+   Fahrenheit = ((temperature * 9/5) + 32)
+   Kelvin = ((5/9)*(Fahrenheit-32) + 273)
+  }else{
+   Fahrenheit = '';
+   Kelvin = '';
+  }
+   Kelvin = Kelvin.toFixed(2)
+   Fahrenheit = Fahrenheit.toFixed(2)
+  break;
+}
+
+ document.getElementById("kelvinValue").value = Kelvin
+ document.getElementById("celsiusValue").value = Celsius
+ document.getElementById("fahrenheitValue").value = Fahrenheit
+
+}	
+var humidity;
+var weatherIcon;
+var pressure;
+var uvIndex;
+var temperature;
+var temperatureIcon;
+var windBearing;
+var windSpeed;
+var weatherSummary;
+var currenttz;
+window.onload = function() {
+  humidity = document.getElementById("current-humidity");
+  weatherIcon = document.getElementById("current-icon");
+  pressure = document.getElementById("current-pressure");
+  uvIndex = document.getElementById("current-uvIndex");
+  temperature = document.getElementById("current-temperature");
+  temperatureIcon = document.getElementById("temperature-icon");
+  windBearing = document.getElementById("current-wind-bearing");
+  windSpeed = document.getElementById("current-wind-speed");
+  weatherSummary = document.getElementById("weather-summary");
+  currenttz= document.getElementById("currenttz");
+  moneyicon=document.getElementById("money-icon");
+  downloadicon=document.getElementById("download-icon");
+  moneyicon.src="money.svg";
+  downloadicon.src="download.svg";
+}
+var weatherImages = {
+  "clear-day": "clear-day.svg",
+  "clear-night": "clear-night.svg",
+  "rain": "rain.svg",
+  "snow": "snow.svg",
+  "sleet": "sleet.svg",
+  "wind": "wind.svg",
+  "fog": "fog.svg",
+  "cloudy": "cloudy.svg",
+  "partly-cloudy-day": "partly-cloudy-day.svg",
+  "partly-cloudy-night": "partly-cloudy-night.svg",
+  "hail": "hail.svg",
+  "thunderstorm": "thunderstorm.svg",
+  "tornado": "tornado.svg"
+}
+function showWeather(lat, long) {
+    lat="13.723418599999999";
+		long="100.4762319";
+		humidity.innerHTML ="Retriving...";
+    var url = `https://api.darksky.net/forecast/16a1ea616ffe725dae09e3535eda15d4/${lat},${long}` + `?format=jsonp&callback=displayWeather`;
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = url;
+    document.getElementsByTagName("head")[0].appendChild(script);
+    displayWeather(object);
+	
+  }
+var getWeather = function() {
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(position){
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+        alert(lat+long);
+        showWeather(lat, long)
+      })
+    }
+       else {
+            window.alert("Could not get location");
+      }
+  }
+  function farenheitToCelsius(k) {
+  return Math.round((k - 32) * 0.5556 );
+}
+
+function humidityPercentage(h) {
+  return Math.round(h * 100);
+}
+
+function degreesToDirection(degrees) {
+    var range = 360/16;
+    var low = 360 - range/2;
+    var high = (low + range) % 360;
+    var angles = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
+    for (i in angles) {
+
+        if(degrees>= low && degrees < high)
+            return angles[i];
+
+        low = (low + range) % 360;
+        high = (high + range) % 360;
+    }
+}
+
+function knotsToKilometres(knot) {
+  return Math.round(knot * 1.852);
+}
+
+
+var object;
+
+ function displayWeather(object) {
+    humidity.innerHTML = "Humidity: " + humidityPercentage(object.currently.humidity) + "%";
+    weatherIcon.src = "" + weatherImages[object.currently.icon]; <!--  Attaching our icons to the weather data here...  -->
+    pressure.innerHTML = "Pressure: " + object.currently.pressure + " mb";
+    uvIndex.innerHTML = "UV: " + object.currently.uvIndex;
+   // temperatureIcon.src = "thermometer.svg";
+    temperatureIcon.src="temperature-icon.svg";
+	temperature.innerHTML = farenheitToCelsius(object.currently.temperature) + " C" + " / " + object.currently.temperature + " F";
+   // windBearing.innerHTML = "Wind Direction: " + degreesToDirection(object.currently.windBearing);
+   // windSpeed.innerHTML = "Wind Speed: " + knotsToKilometres(object.currently.windSpeed) + " km/h";
+    weatherSummary.innerHTML=object.currently.summary;
+	currenttz= "TZone:" + object.timezone ;//+ ": Summary: " + object.currently.summary;
+   // document.getElementById("current-icon").style.backgroundColor = "#002db3"; 
+   // document.getElementById("weather-summary").style.backgroundColor = "#002db3"; 
+   //console.log(object);
+  
+
+ }
+ 
+</script>
+
+<div id="histats_counter"></div>
+
+<script type="27812b1a2f8ab90aedeb8247-text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4114769,4,511,95,18,00000000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4114769&101" alt="free webpage hit counter" border="0"></a></noscript>
+
+
+<script type="27812b1a2f8ab90aedeb8247-text/javascript">
+var sc_project=11777560; 
+var sc_invisible=1; 
+var sc_security="648414f3"; 
+</script>
+<script type="27812b1a2f8ab90aedeb8247-text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="//c.statcounter.com/11777560/0/648414f3/1/" alt="Web
+Analytics"></a></div></noscript>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-34692182-1" type="27812b1a2f8ab90aedeb8247-text/javascript"></script>
+<script type="27812b1a2f8ab90aedeb8247-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-34692182-1');
+</script>

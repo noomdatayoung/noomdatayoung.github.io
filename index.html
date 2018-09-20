@@ -1,1 +1,296 @@
-hi
+<html lang="en">
+<style>
+html, body {
+border: 0;
+margin: 0;
+padding: 2px 0px;
+vertical-align: baseline;
+    height: 100%;
+    margin: 0;         /* Reset default margin on the body element */
+}
+#bar{
+ position: absolute;
+	right: 0px;
+}
+#spanel{
+
+display: flex;
+ float: right;
+ height:32px;
+ padding:2px; 0px;
+ position: absolute;
+	right: 0px;
+ 
+}
+.custom-select{
+   margin: 0px 5px;
+}
+#home{
+position:absolute;
+left:0px;
+top: 7px;
+}
+.player{
+width:38px;
+margin-top:-7px;
+}
+#home{
+position:absolute;
+left:0px;
+margin-top:-2px;
+}
+#volm{
+margin-top:5px;
+width:30px;
+ transform: rotate(90deg);
+}
+#cplayer{
+display: flex;
+
+ float: right;
+ height:32px;
+ padding:0px; 0px;
+ left:0px;
+}
+#myradio{
+width:0px;
+display:none;
+
+}
+iframe {
+    display: block;       /* iframes are inline by default */
+    background: white;
+    border: none;         /* Reset default border */
+    width: 100%;
+    height: 100%;
+}
+</style>
+<head>
+	<title>Select styles with CSS only</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="select-css.css">
+	<link rel="stylesheet" href="select-css-arrow.css">
+	<link rel="stylesheet" href="select-css-compat.csss">
+	<link rel="stylesheet" href="select-css-theme.css">
+	<link rel="stylesheet" href="dewmo.css">
+</head>
+<div id=home><a href=# onclick=home();><img class=player src=home.svg></a></div>
+<div id=bar>
+
+<div id=spanel>
+<div >
+<div class="custom-select" style="width:80px;">
+	<select NAME="myurl"  id="myurl" onchange="myfurl()">
+<option value="." selected>site...</option>
+<option value="https://slashdot.org/">slashdot</option>
+<option value="http://www.osnews.com">osnews</option>
+<option value="https://www.cia.gov/library/publications/the-world-factbook/">the-world-factbook</option>
+<option value="https://www.car.chula.ac.th/">chula</option>
+<option value="http://www.trueplookpanya.com/">trueplookpanya</option>
+<option value="http://vajirayana.org">vajirayana</option>
+<option value="http://168premium.com">pt</option>
+<option value="http://www.worldometers.info/">worldmeters</option>
+<option value="https://www.voathai.com/Navigation/LiveAudioNJS">VOA-TH</option>
+<option value="http://www.thaigoodview.com/">thaigoodview</option>
+<option value="http://paipibat.com/">paipibat</option>
+<option value="http://www.ebooksdownloadfree.net/">ebook-TH</option>
+<option value="http://www.e4thai.com/e4e/">e4thai</option>
+<option value="http://thai.langhub.com/th-en/">langhub</option>
+<option value="http://www.akcsys.org/master">akcsys</option>
+<option value="http://www.dlit.ac.th">dlit</option>
+<option value="http://en.wikipedia.org">wikipedia</option>
+<option value="http://bing.com">bing</option>
+<option value="http://www.monitis.com/traceroute">traceroute</option>
+<option value="https://www.emailsecuritycheck.net">emailsecuritycheck</option>
+<option value="https://web.archive.org/">webarchive</option>
+<option value="https://www.webpagetest.org">webpagetest</option>
+<option value="https://mxtoolbox.com/">mxtoolbox</option>
+<option value="https://network-tools.com">network-tools</option>
+<option value="https://www.ryt9.com/">ryt9</option>
+<option value="https://thestandard.co/home/">thestandard</option>
+<option value="https://japantoday.com">japantoday</option>
+<option value="https://www3.nhk.or.jp/nhkworld/?cid=nwd-adwords-text-th-brand">nhk</option>
+<option value="https://www.aljazeera.com/">aljazeera</option>
+<option value="https://www.dw.com/">DW</option>
+<option value="http://time.com/section/newsfeed/">TimeS</option>
+<option value="http://www.abc.net.au/news/">ABC</option>
+<option value="https://www.reuters.com/">reuters</option>
+<option value="https://www.techgenyz.com/" >techgenyz</option>
+<option value="https://www.indiatoday.in/" >indiatoday</option>
+<option value="https://news.sky.com/" >skynews</option>
+<option value="http://www.chinadaily.com.cn/china/top_news.html">chainadaily</option>
+<option value="http://www.xinhuanet.com/english/" >xinhuanet</option>
+<option value="https://developers.facebook.com/tools/explorer/">FBGraph</option>
+<option value="http://kunok.com/gog.php?url=https://steamdb.info/">steamdb.info</option>
+<option value="http://www.dlit.ac.th">dlit</option>
+<option value="https://www.internet-radio.com/">internetradio</option>
+<option value="https://www.webpagetest.org/">Webpagetest</option>
+<option value="https://mxtoolbox.com/">mxtoolbox</option>
+<option value="http://www.monitis.com/traceroute/">traceroute</option>
+<option value="https://threejs.org/examples/css3d_periodictable.html">threejs</option>
+<option value="https://love2d.org/" >love2d</option>
+<option value="http://gionkunz.github.io/chartist-js/" >chartist</option>
+<option value="https://www.javascripting.com/view/js-xls" >js-xls</option>
+<option value="http://www.textfiles.com/stories/" >stories</option>
+<option value="https://developers.line.me/en/docs/#messaging-api" >LINE-API</option>
+<option value="http://www.javascriptkit.com" >Javascripts</option>
+<option value="http://net-informations.com/" >CompLang</option>
+<option value="http://www.webdesignernews.com/">webdesign</option>
+<option value="https://golang.org/" >Golang</option>
+<option value="http://boringtechnology.club/" >boringtechnology</option>
+<option value="https://kubernetes.io/" >kubernetes</option>
+<option value="https://www.restapitutorial.com/" >REST</option>
+<option value="https://nodejs.org/en/" >node.js</option>
+<option value="https://laravel.com/" >laravel</option>
+<option value="https://javascript.info/class" >Javascripts</option>
+<option value="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" >CSS3</option>
+<option value="http://lazarus-ide.org/" >Lazarus</option>
+<option value="http://synapse.ararat.cz/doku.php" >Synapse</option>
+<option value="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS3</option>
+<option value="http://lazarus-ide.org/">Lazarus</option>
+<option value="http://synapse.ararat.cz/doku.php">Synapse</option>
+<option value="https://www.talosintelligence.com/" >talosintelligence</option>
+<option value="https://www.emailsecuritycheck.net/" >emailstest</option>
+<option value="https://network-tools.com/" >neworktools</option>
+<option value="https://web.archive.org/" >archive</option>
+<option value="http://en.wikipedia.org" >Wikipedia</option>
+<option value="https://techcrunch.com/" >techcrunch</option>
+<option value="https://who.is/" >whois</option>
+<option value="https://slashdot.org/" >slashdot</option>
+<option value="http://www.ustream.tv/embed/5883040?html5ui" >live Akihabara crossing</option>
+<option value="http://www.ustream.tv/embed/5720585?html5ui">live Osaka seen from Mt.Kongo-zan</option>
+<option value="http://www.ustream.tv/embed/9408562?html5ui">live NASA ISS (http://www.ustream.tv)</option>
+<option value="noom.jpg">c</option>
+<option value="https://onepagelove.com/" >onepagelove</option>
+<option value="http://cssdeck.com/popular">cssdeck</option>
+<option value="https://www.youtube.com/embed/wMo3F5IouNs?list=PLRrf17rCVaDF4ZIHpgnGTydXYGwcnsdSp">QVCJ</option>  
+<option value="https://torquemag.io/2017/11/top-10-blank-wordpress-themes-impressive-advantages/">wordpress</option>  
+</select>
+
+</div>
+</div>
+
+<div style="width:90px;">
+<div class="custom-select">
+<select id="mySelect" NAME ="mySelect" onchange="myFunction()">
+  <option value="." selected>radio...</option>
+  <option value="http://37.251.146.169:8300/stream/;&type=mp4">RADIO CLASIC MOZART</option>   
+  <option value="http://174.36.206.197:8000/listen.pls/&type=mp4">Venice Classic Radio Italia</option>
+  <option value="http://158.69.38.195:20082/listen.pls/&type=mp4">CINEMIX</option>
+  <option value="http://62.75.215.7:8018/;&type=mp4">Blue Heron Radio</option>
+  <option value="http://192.111.140.11:8194/listen.pls/&type=mp4">Planet Ronin Music Stream</option>
+  <option value="http://209.9.229.206:80/;&type=mp4">Soundtrack</option>
+<option value="http://77.235.42.90:80/listen.pls/&type=mp4">LOUNGE-RADIO.COM
+swiss made</option> 
+<option value="http://198.245.60.88:8080/listen.pls/&type=mp3">BEAUTIFUL instrumentals</option> 
+<option value="http://178.32.62.172:8087/listen.pls/&type=mp4">Sunshine 106.8
+<option value="http://94.23.252.14:8067/listen.pls/&type=mp4">Ambi Nature Radio (Sleep, Relaxation)</option> 
+<option value="http://198.178.123.17:10922/listen.pls/&type=mp4">San Franciscos 70s HITS!</option>
+<option value="http://airspectrum.cdnstream1.com:8018/1606_192">Magic 80s Florida</option>
+<option value="http://45.43.200.66:25858/listen.pls/&type=mp4">GOLD INSTRUMENTAL</option>
+<option value="http://192.96.205.59:7610/listen.pls/&type=mp4">KLUX 89.5HD Good Company</option>
+<option value="http://144.217.129.213:9339/listen.pls/&type=mp4">Masukomi Stream</option>
+<option value="http://66.70.187.44:9073/listen.pls/&type=mp4">a-chan-jpop</option>
+<option value="http://64.71.79.181:8018/;&type=mp4">Big B Radio</option>
+<option value="http://184.75.223.178:8087/&type=mp4">Asia DREAM Radio Japan Hits</option>
+<option value="http://streamer.radionewark.com:8000/;&type=mp4">Radio Newark</option>
+<option value="http://212.83.172.11:8594/listen.pls/;&type=mp4">RSO 91,7-Greece</option>
+<option value="http://64.71.79.181:8026/;&type=mp4">Chainess</option>
+<option value="http://208.80.53.108:26814/&type=mp4">Chainess</option>
+<option value="http://192.184.9.158:8560/;&type=mp4">A1 Chainess</option>
+<option value="http://mp3stream8.apasf.apa.at:8000/listen.pls;&type=mp4">Radio-Niederösterreich</option>
+<option value="http://rstream.mcot.net:8000/fm107">FM107</option>
+<option value="http://prdonline.prd.go.th:8218/;stream">PRD</option>
+<option value="http://prdonline.prd.go.th:8200/;stream">FM.88</option>
+<option value="http://203.158.239.184:8000/;stream">Ratchamongkol</option>
+<option value="http://uk2.internet-radio.com:8358/stream/&type=mp4">1FM 60s/70s/80s/90s/00s!</option>
+<option value="http://uk2.internet-radio.com:31491/&type=mp4">Ambient Radio .org</option>
+<option value="http://198.58.98.83:8258/stream/&type=mp4">Classic Rock Florida HD</option>
+<option value="http://37.59.14.77:8352/listen.pls/&type=mp4">Blues Radio</option>
+<option value="http://192.95.39.65:5383/stream">WNJC</option>
+<option value="http://eco.onestreaming.com:8286/listen.pls/&type=mp4">Lakka Souli Radio-Geek</option>
+<option value="http://212.71.250.12:8119/stream">Jazz Global HD</option>
+<option value="http://192.184.9.158:8560/listen.pls">JAZZ</option>
+<option value="http://stream14.shoutcastsolutions.com:8057/listen.pls/&type=mp4">JAZZ</option>
+<option value="http://151.80.97.38:8089/listen.pls/&type=mp4">Lasestereo- El Alma De La MusicaSALSA</option>
+<option value="http://37.187.93.104:8139/listen.pls/&type=mp4">1 RADIO SUPERSTAR BELGIUM</option>
+<option value="http://95.211.3.65:9155/listen.pls/&type=mp4">British Comedy Channel</option>
+<option value="http://149.255.59.164:8132/listen.pls/&type=mp4">British Comedy Radio GB</option>
+<option value="http://149.255.59.164:8009/listen.pls/&type=mp4">British Comedy Channel 2 ROK Classic Radio</option>
+<option value="http://38.107.242.34:8453/&type=mp4">SOUL</option>
+<option value="http://198.178.123.5:11192/listen.pls/&type=mp4">CBS Freedom Radio WW2</option>
+<option value="http://192.240.102.133:7701/&type=mp4">Oxford Channel</option>
+<option value="http://167.114.64.181:8462/listen.pls/&type=mp4">AMAZING TALES </option>
+<option value="http://95.211.3.65:9185/listen.pls/&type=mp4">Science Fiction & Supernatural Channel</option>
+<option value="http://198.178.123.5:12106/listen.pls/&type=mp4">Free Horror Radio CBS Radio</option>
+<option value="http://82.94.204.110:8061/listen.pls/&type=mp4">Hollands Palet</option>
+<option value="http://46.231.87.20:8388/listen.pls/&type=mp4">WONDERLANDRADIO</option>
+<option value="http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-eieuk">BBCWSSC</option>
+</select>
+</div>
+</div>
+
+<div id=cplayer><a href=# onclick="playa()"><img class=player src=play.svg ></a><a href=# onclick="document.getElementById('myradio').pause()"><img class=player src=pause.svg></a><input id=volm type="range"  min="1" max="100" value="100" onchange=chvolumn(); >
+</div>
+</div>
+</div>
+<br>
+<br>
+
+<audio id="myradio" src="start.mp3" controls="true" volume="1.0" >
+  Your browser does not support HTML5 audio.<br>
+</audio>
+</div>
+<iframe allowfullscreen="1" src=""  id="search_iframe" frameborder="0" ></iframe>
+<script> 
+	document.getElementById("myurl").selectedIndex=0;
+	document.getElementById("mySelect").selectedIndex=0;
+function chvolumn(){
+	document.getElementById('myradio').volume =document.getElementById('volm').value/100;
+	document.getElementById("demo").innerHTML =(document.getElementById('volm').value/100)+"/"+document.getElementById('myradio').volume;
+}
+function playa()
+{
+    var x = document.getElementById("mySelect").value;
+	 if (x==".") {
+	 alert("Select Radio Station");
+	 }
+	 document.getElementById('myradio').play();	 
+}
+function myFunction() {
+var vid = document.getElementById("myradio");
+    var x = document.getElementById("mySelect").value;
+	 var y = document.getElementById("mySelect").selectedIndex;
+	var z = document.getElementById("mySelect").options[y].innerHTML;
+    //document.getElementById("demo").innerHTML = "@loading.." + z;
+	vid.src = x;		
+	document.getElementById('myradio').play()
+	//document.getElementById("demo").innerHTML 
+	document.title= "@Play" + z;	
+}
+function myfurl() {
+    var x = document.getElementById("myurl").value;		
+	var y = document.getElementById("myurl").selectedIndex;
+	var z = document.getElementById("myurl").options[y].innerHTML;
+    //document.getElementById("demo").innerHTML = "@loading.." + z;
+	//vid.src = x;	
+	//document.getElementById('myradio').play()
+	//document.getElementById("demo").innerHTML = "@Play" + x;
+	document.getElementById('search_iframe').src = x;	
+	document.title= x;
+}
+function home(){
+	document.getElementById('search_iframe').src = "content.html";	
+}
+function ads(){
+alert("Ads/Add links mailto noom@datayoung.com ,We are just Directory Services your content is Your");
+}
+function clk() {
+        var a=new Date();   
+		//var d = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+        document.getElementById("disp").innerHTML=a.getFullYear()+"/"+(a.getMonth()+1)+"/"+a.getDate()+" "+a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds() ;
+       setTimeout(clk,1000);
+    }
+	//clk();
+	home();
+</script> 
