@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Multi-Level Drop Down Menu with Pure CSS</title>
+<style>
+.main{
+position:absolute;
+left:-2.5em;
+top:-1em;
+width:100%;
+height:100%;
+}
+ul, #myUL {
+  list-style-type: none;
+  
+  list-style: none;
+    //margin-left: 1em;
+}
+ul li {
+  ddisplay: block;
+  aposition: relative;
+  //float: left;
+  background: #1bc2a2;
+}
+  a {
+  display: block;
+  padding: 10px 30px;
+  margin-padding:0px;
+  text-decoration: none;
+  //white-space: nowrap;
+  color: #fff;
+}
+/* This hides the dropdowns */
+
+
+
+
+
+
+ul li a:hover { background: #2c3e50; }
+
+/* Display the dropdown */
+
+
+
+
+/* Displays second level dropdowns to the right of the first level dropdown */
+
+
+.caret::before {
+content: "\00a0\25B6";
+  color: white;
+  display: inline-block;
+  font-size:11px;
+  margin-right: 6px;
+}
+
+.caret-down::before {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */'
+  transform: rotate(90deg);  
+}
+.caret {
+  ddisplay: none;
+}
+.nested {
+  display: none;
+}
+.active {
+  display: block;
+}
+</style>
+</head>
+
+<body>
+<ul class="main">
+  <li><a href="#">Home</a></li>
+  <li><a href="#" class="caret">Front End Design</a>
+    <ul class="nested" >
+      <li><a href="#">HTML</a></li>
+      <li><a href="#" >CSS</a>
+        <ul class="nested">
+          <li><a href="#">Resets</a></li>
+          <li><a href="#">Grids</a></li>
+          <li><a href="#">Frameworks</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="caret">JavaScript</a>
+        <ul class="nested">
+          <li><a href="#">Ajax</a></li>
+          <li><a href="#">jQuery</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#" class="caret">WordPress Development</a>
+    <ul class="nested">
+      <li><a href="#">Themes</a></li>
+      <li><a href="#">Plugins</a></li>
+      <li><a href="#" class="caret">Custom Post Types</a>
+        <ul class="nested">
+          <li><a href="#">Portfolios</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Options</a></li>
+    </ul>
+  </li>
+  <li><a href="#">About Us</a></li>
+</ul>
+
+
+</div>
+<script>
+var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".caret").classList.toggle("active");
+	 this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>
+</body>
+</html>

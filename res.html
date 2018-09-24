@@ -1,0 +1,590 @@
+<html lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9" />
+<meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1, user-scalable=no" />
+<title>datayoung.com -UI under developing</title>
+
+<style>
+html,body,div,span,applet,object,iframe,h1,h2,
+h3,h4,h5,h6,p,blockquote,a,abbr,acronym,address,
+big,cite,del,dfn,em,img,ins,kbd,q,s,samp,small,
+strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,
+dd,ol,ul,li,fieldset,form,label,legend,table,caption,
+tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,
+embed,figure,figcaption,footer,header,hgroup,input,menu,
+nav,output,ruby,section,summary,time,mark,audio,video {
+border: 0;
+margin: 0;
+padding: 0px 0px;
+vertical-align: baseline;
+
+}
+.modal-content {
+    //border: 1px solid #f3f3f3; /* Light grey */
+    //border-top: 1px solid #f3f3f3; /* Blue */
+    //border-radius: 50%;
+    //width: 120px;
+    //height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+
+</style>
+<style>
+#img01{
+display: block;
+mmax-width: 100%; 
+wwidth:100%;
+wheight: 100%; 
+aheight: auto; 
+left:0;
+  cursor: pointer;
+}
+
+#dem{
+top:0px;
+position:fixed;
+background-color:black;
+background-color: rgba(255,255,255,0.3);
+	z-index:999;
+}
+#dem a:visited {
+    color: black;
+}
+#dem a:link {
+    text-decoration: none;
+	color:black;
+
+}
+
+#demo{
+  cursor:pointer; //first page pointer hand every pics
+  
+}
+#demo img{
+width: 100%; 
+max-width: 100%; 
+max-height:420px;
+}
+.modal {
+    display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+     /* Sit on top */
+    padding-top: 0px; /* Location of the box */
+    left: 0%;
+    top: 0;
+    width: 106%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,.97); /* Black w/ opacity */
+	 z-index: 99;
+
+}	
+/* Modal Content (image) */
+.modal-content {
+    //margin-left:  0px;
+	//right:  0px;
+	mmargin-top:  50%;
+		  smax-width:100%;
+	//top: 50%;
+	left:0px;
+	left: 0%;
+	 sswidth: 100%;
+	 //max-width:1024px;
+  hseight: 100%; //focus on mobile -if ne
+	//width: 100%; /* Full width */
+   //background-color:  Black ;
+  ttransform: translate(-50%, 0%);
+  z-index: 0;
+  dmax-height:100%
+ 
+   z-index: 0;
+   aoverflow-y: auto;
+   aoverflow-x: scroll;
+   sheight: 100%; /* Or whatever */
+wsidth:100%;
+	}
+.inmodal { //tocuh content to close
+	 z-index: 200;
+	 //background-color: rgb(0,0,0); /* Fallback color */
+	  //background-color: rgba(0,0,0,0.1);
+	wwidth: 100%;
+  hheight: 100%;
+   soverflow-x: scroll;
+   position: absolute;
+	}
+.close {
+  cursor: pointer;
+z-index: 100;
+ position: fixed;
+    top: 15px;
+    right: 5px;
+    
+	background: rgba(0,0,0,0.2); 
+    width: 60px;
+    height: 60px;
+    
+}
+.nex {
+     position: fixed;
+	z-index: 100;
+	  cursor: pointer;
+    top: 145px;
+    right: 5px;
+    color: #f1f1f1;
+    font-size: 37px;
+    ffont-weight: bold;
+    transition: 0.3s;
+	background: rgba(0,0,0,0.2); 
+}
+.prv {
+     position: fixed;
+	z-index: 100;
+	  cursor: pointer;
+    top: 85px;
+    right: 5px;
+    color: #f1f1f1;
+    font-size: 37px;
+    ffont-weight: bold;
+    transition: 0.3s;
+	background: rgba(0,0,0,0.2); 
+}
+.close:after {
+    content: '';
+    height: 60px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 28px;
+}
+
+.close:before {
+    content: '';
+    height: 60px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 28px;
+}
+FIGURE, FIGCAPTION {
+float: left;
+padding:0px;
+display: block;
+ffont-style: italic;
+ffont-variant: small-caps;
+max-width:300px;
+}
+#caption {
+z-index:999;
+font-size:20px;
+hheight:100px;
+width:100%;
+background-color:  white ;
+
+}
+.preload {
+    display: none;
+}
+</style>
+<body>
+<center>
+<div class="preload">
+    <img src="download.svg" width:0;>
+	</div>
+<div id="myModal" class="modal">
+	<span class="close"></span>
+	<span class="prv">&nbsp;<<&nbsp;</span>
+	<span class="nex">&nbsp;>>&nbsp;</span>
+<div id=inmodal class=inmodal>
+  <img class="modal-content" id="img01">  
+    <div class="caption" id="caption">Caption</div> 
+  </div>
+  </div>
+    <div id=dem></div>    <br>
+	
+	<div id=demo></div>  </center>
+		<div id=mesg></div>            
+	</div>
+		<input type="hidden" id="currentpage" value=1>
+		<input type="hidden" id="currentpho" value=1>
+		
+</body>
+
+<script>
+//i=new image();
+//preload("download.svg");
+
+
+	
+	var modal = document.getElementById('myModal');
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+var snex = document.getElementsByClassName("nex")[0];
+var sprv = document.getElementsByClassName("prv")[0];
+var span3 =document.getElementsByClassName("inmodal")[0];
+// When the user clicks on <span> (x), close the modal
+
+		span.onclick = function() { 
+	    modal.style.display = "none";
+		//main.style.overflowY = "auto";
+		//modalImg.src = "";    
+		document.getElementById('dem').style.display=""; //menu ON
+	    document.body.style.overflowY = "auto";
+        document.body.style.position=""; 
+     	var y = location.hash.replace("#","");
+       scrollTo(0,y);
+      
+}
+snex.onclick = function() { 
+
+//alert(document.getElementById('currentpage').value);
+pda=(document.getElementById('currentpho').value);
+		var modalImg = document.getElementById("img01");
+			 var currentpho = document.getElementById("currentpho");
+			 
+			 pda++;
+			 currentpho.value=pda
+			 car1=cars[pda].split(";");
+			  document.body.style.cursor = 'progress';
+			  //modal.style.cursor = 'progress';
+			  snex.style.cursor = 'progress';
+			  mx=window.innerWidth || document.body.clientWidth;
+			my=window.innerHeight || document.body.clientHeight;
+			l = parseInt(mx / 2, 10);
+			t = parseInt(my / 2, 10);
+			   modalImg.src = "download.svg";
+			   var el = document.getElementById("inmodal");
+			   el.style.top = t;
+		el.style.left = l+50;
+		document.getElementById("caption").style.background="black";
+		document.getElementById("caption").style.color="white";		
+	         modalImg.src = car1[1];  
+			 document.getElementById("caption").innerHTML=atob(car1[4]);
+			 //alert("pda:"+car1[1]);
+	    //modal.style.display = "none";
+		//main.style.overflowY = "auto";
+	   // document.body.style.overflowY = "auto";
+        document.body.style.position=""; 
+		iw=car1[2];
+		ih=car1[3];
+
+		iw=parseInt(iw/2,10);
+		ih=parseInt(ih/2,10);
+		iw2=parseInt(iw/2,10);
+		if (ih<=0) ih=t;
+		if (iw<=0) iw=l;
+		
+		i2=l-iw;
+		i3=t-ih;
+		var el = document.getElementById("inmodal");
+							   
+		if (i3<0) i3=0; 
+		if (i2<0) i2=0; 
+		el.style.top = i3;
+		el.style.left = i2;
+		document.getElementById("caption").width=iw;
+      	var y = location.hash.replace("#","");
+        scrollTo(0,y);
+      
+}
+sprv.onclick = function() { 
+
+//alert(document.getElementById('currentpage').value);
+pda=(document.getElementById('currentpho').value);
+		var modalImg = document.getElementById("img01");
+			 var currentpho = document.getElementById("currentpho");
+			 
+			 pda--;
+			 currentpho.value=pda
+			 car1=cars[pda].split(";");
+			 document.body.style.cursor = 'progress';
+			 //modalImg.src = "download.svg";
+	       snex.style.cursor = 'progress';
+			  mx=window.innerWidth || document.body.clientWidth;
+			my=window.innerHeight || document.body.clientHeight;
+			l = parseInt(mx / 2, 10);
+			t = parseInt(my / 2, 10);
+			   modalImg.src = "download.svg";
+			   var el = document.getElementById("inmodal");
+			   el.style.top = t;
+		el.style.left = l+50;
+		document.getElementById("caption").style.background="black";
+		document.getElementById("caption").style.color="white";		
+	         modalImg.src = car1[1];  
+			 document.getElementById("caption").innerHTML=atob(car1[4]);
+			 //alert("pda:"+car1[1]);
+	    //modal.style.display = "none";
+		//main.style.overflowY = "auto";
+	   // document.body.style.overflowY = "auto";
+	  document.body.style.position=""; 
+		iw=car1[2];
+		ih=car1[3];
+
+		iw=parseInt(iw/2,10);
+		ih=parseInt(ih/2,10);
+		iw2=parseInt(iw/2,10);
+		if (ih<=0) ih=t;
+		if (iw<=0) iw=l;
+		
+		i2=l-iw;
+		i3=t-ih;
+		var el = document.getElementById("inmodal");
+							   
+		if (i3<0) i3=0; 
+		if (i2<0) i2=0; 
+		el.style.top = i3;
+		el.style.left = i2;
+		document.getElementById("caption").width=iw;
+      	var y = location.hash.replace("#","");
+        scrollTo(0,y);
+      
+}
+
+// When the user clicks on <span> (x), close the modal
+span3.onclick = function() { 
+    modal.style.display = "none";
+    //main.style.overflowY = "auto";
+document.getElementById('dem').style.display=""; //menu ON
+    document.body.style.overflowY = "auto";
+            document.body.style.position=""; 
+
+      	var y = location.hash.replace("#","");
+        scrollTo(0,y);  //main.style.overflowY = "hidden";
+
+}
+function moda(pn){
+
+var x = pageXOffset, y = pageYOffset;
+document.getElementById('dem').style.display="none"; //menu off
+		//filename=mee;//me.src.split("/").pop(); //pop get the last array
+		pda=(document.getElementById('currentpho').value);
+		var modalImg = document.getElementById("img01");
+		 modalImg.src = "download.svg";
+		 var currentpho = document.getElementById("currentpho");
+		
+		// pda++;
+		pda=pn; 
+		currentpho.value=pda
+		 car1=cars[pda].split(";");
+		      var modal = document.getElementById('myModal');
+		       modal.style.display = "block";
+				modal.style.cursor = 'progress';
+				document.body.style.cursor = 'progress';
+			   modalImg.src = car1[1];  
+			   	   
+
+			   var x = modalImg.complete;
+			   span = document.getElementsByClassName("close")[0];
+			   document.getElementById("caption").innerHTML=atob(car1[4]);			   
+			   location.hash=y;
+			   var i = new Image();
+			   i.onload = function() {
+			  //  swal("Load finsihed", "Thanks", "success");
+    // the image is ready
+};
+i.onerror = function() {
+    // the image has failed
+	alert("eait");
+};
+
+		i.src = modalImg.src;
+		if(!i.complete) {  
+		//alert("It's loaded!") 
+		//i.src = modalImg.src;//alert("loading");
+		
+		}
+		iw=car1[2];
+		ih=car1[3];
+		mx=window.innerWidth || document.body.clientWidth;
+		my=window.innerHeight || document.body.clientHeight;
+		l = parseInt(mx / 2, 10);
+		t = parseInt(my / 2, 10);
+		iw=parseInt(iw/2,10);
+		ih=parseInt(ih/2,10);
+		iw2=parseInt(iw/2,10);
+		if (ih<=0) ih=t;
+		if (iw<=0) iw=l;
+		
+		i2=l-iw;
+		i3=t-ih;
+		var el = document.getElementById("inmodal");
+							   
+		if (i3<0) i3=0; 
+		if (i2<0) i2=0; 
+		el.style.top = i3;
+		el.style.left = i2;
+		//document.getElementById("caption").FIGCAPTION="100px;;
+		//alert(i2+":"+iw+":"+l+":"+mx);
+		
+}
+</script>
+<script type="text/javascript" src="564673436908715.txt"></script>
+
+<script type="text/javascript">	
+
+	//var cars = [222,333,323,1,2,3,4,5,6,7,8,9,10,11,12,23,44,45,46,74,45565,65,6565];
+//esc0 = LZString.decompressFromEncodedURIComponent(data)
+//esc1=JSON.parse(esc0);
+	//document.write(esc1[0]);
+	
+f=25;
+npage=0;
+ppage=0;
+cpage=0;
+stp=0;
+cars=data;
+esc1=data;
+//alert(data[100]);
+maxr=data.length;
+//alert(maxr);
+s=getpageno(f);
+//genmenu(s);
+genme(s);
+var im = [];
+function preload() {
+
+    for (var ix = 0; i < arguments.length; ix++) {
+        im[ix] = new Image();
+        im[ix].src = preload.arguments[ix];
+    }
+}
+preload("https://scontent.xx.fbcdn.net/v/t1.0-9/1013406_565128990196493_1303085441_n.jpg?_nc_cat=0&oh=8afdfdeee3b7d249fc2c94f8b0957fbb&oe=5C056C3B");  
+function genmenu(p){
+for (i=1;i<=p;i++){
+document.write (i);
+
+}
+}
+function genmel(p){
+for (i=1;i<=p;i++){
+menu = document.getElementById('dem');
+menu.innerHTML+= ('<a href=# onclick=getpage('+i+');>'+i+'</a>');
+
+}
+getpage(1);
+}
+
+function genme(p){
+//for (i=1;i<=p;i++){
+menu = document.getElementById('dem');
+menu.innerHTML='<a href=# onclick=getpage(0);>FIRST</a>&nbsp;';
+menu.innerHTML+='&nbsp;<a href=# onclick=getpage(-2);>PREVIOUS</a>&nbsp;';
+menu.innerHTML+='&nbsp;<a href=# onclick=getpage(-1);>NEXT</a>&nbsp;';
+
+menu.innerHTML+= ('&nbsp;<a href=# onclick=getpage('+p+');>LAST</a>');
+
+//}
+getpage(1);
+}
+function go(){
+location=document.options[document.pages.selectedIndex].value;
+}
+function genme(p){
+
+cb=("<select name='pages' id='pages' onchange=getpage(this.selectedIndex);>");
+for (i=0;i<=p;i++){
+if (i==0) cb+=("<option  value=0>Choose...</option>"); else if (i==1) cb+=("<option  selected value=1>1</option>"); else cb+=("<option value="+(i)+">" + (i) + "</option>");
+}
+
+menu = document.getElementById('dem');
+menu.innerHTML='<a href=# onclick=getpage(0);>FIRST</a>&nbsp;';
+menu.innerHTML+='&nbsp;<a href=# onclick=getpage(-2);>PREVIOUS</a>&nbsp;';
+menu.innerHTML+=cb;
+menu.innerHTML+='&nbsp;<a href=# onclick=getpage(-1);>NEXT</a>&nbsp;';
+menu.innerHTML+= ('&nbsp;<a href=# onclick=getpage('+p+');>LAST</a>');
+
+//}
+getpage(1);
+}
+function getpageno(f){
+	s=Math.ceil(maxr/f);	//row=car1[0]+","+car1[1];
+	return s;
+}
+
+
+function getpho(da){
+	car1=cars[da].split(";");
+	//
+	row="<img src="+car1[0]+">"+"<img src="+car1[1]+">";
+	//row="<img src="+car1[0]+" height=300px "+"onclick=moda('"+car1[1]+"',"+da+");>";
+	row="<img src="+car1[0]+" style='max-width:100%;max-height:600px'  "+"onclick=moda("+da+");>";
+		row="<span class=im><figure><img src="+car1[0]+"   "+"onclick=moda("+da+"); title='"+atob(car1[4])+"' ><FIGCAPTION>"+atob(car1[4])+"</FIGCAPTION></figure></span>";
+		
+		
+		//remove style into css (class im)
+	//row=car1[0]+","+car1[1];	
+	//preload("https://scontent.xx.fbcdn.net/v/t1.0-9/1013406_565128990196493_1303085441_n.jpg?_nc_cat=0&oh=8afdfdeee3b7d249fc2c94f8b0957fbb&oe=5C056C3B");  
+	
+return row;
+}
+rows="";
+
+function pagi(p,f){
+rows="";
+//p-page f-frame mini-min maxi-max
+if (p*f>maxr) mini=1;
+//if ((p*f)>maxr) p=Math.floor(maxr/f)-f;
+mini=(p*f)-f;
+maxi=mini+f;
+if (maxi>maxr) maxi=maxr;
+//if (mini>maxr) maxi=maxr-1;
+if (mini>maxr-f) mini=(Math.floor(maxr/f)*f); 
+//alert(mini+":"+maxi);
+for (i=mini;i<maxi;i++){
+//for (i=90;i<106;i++){
+ car1=cars[i].split(";");
+  
+  //var img = new Image();
+   //     img.src = car1[1];
+rows+=getpho(i);
+//preload(car1[1][i]);
+
+  
+}
+//rows='<div class="grid">'+rows+'</div>'; //add for special waterfall
+return rows;
+}
+function getpage(p){
+
+if (p>=1) document.getElementById('currentpage').value=p;
+if (p==0) document.getElementById('currentpage').value=1;
+currentpage = document.getElementById('currentpage').value*1;
+if (p==-1) { p=currentpage+1;document.getElementById('currentpage').value=p}
+if (p==-2) { p=currentpage-1;document.getElementById('currentpage').value=p}
+if (p==0) {document.getElementById('currentpage').value=1;p=1;}
+// document.body.style.cursor = 'pointer';
+rows=pagi(p,25);
+mesg = document.getElementById('mesg');
+mesg.innerHTML="LOAD...";
+bodx = document.getElementById('demo');
+bodx.innerHTML= rows;
+mesg.innerHTML="";
+
+//document.write(rows);
+//alert(p);
+}
+//rows=pagi(3,10);
+//document.write(rows);
+//document.write(getpho(106));
+var modalImg = document.getElementById("img01");	
+modalImg.addEventListener("load", function () {if(modalImg.complete){
+document.body.style.cursor = '';
+modal.style.cursor = '';
+var snex = document.getElementsByClassName("nex")[0];
+var sprv = document.getElementsByClassName("prv")[0];
+snex.style.cursor='pointer';
+sprv.style.cursor='pointer';
+};} );
+
+   document.documentElement.addEventListener('touchstart', function(event) {
+     if (event.touches.length > 1) {
+       event.preventDefault();
+     }
+   }, false);
+
+window.onload = function() {
+};
+</script>
+
+
