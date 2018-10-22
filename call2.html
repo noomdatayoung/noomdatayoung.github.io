@@ -1,0 +1,67 @@
+<div id="menu"><b>ajax call Ready.click to get data from:</b>
+	<a href=# onclick=call("https://httpbin.org/get");>https://resttesttest.com/</a>
+	<a href=# onclick=call("https://raw.githubusercontent.com/noomdatayoung/kunok/master/kunok.txt");>txt</a>	
+	<a href=# onclick=call("https://raw.githubusercontent.com/noomdatayoung/tipitakathaiunicode/master/Thai-UTF/tu01.txt");>txt4</a>
+	<a href=# onclick=call("hi/hi.txt");>txtinhi</a>
+	<a href=# onclick=call("https://raw.githubusercontent.com/noomdatayoung/kunok/master/index.html");>html</a>
+	<a href=# onclick=call("http://la.datayoung.com/r.php");>LA</a>
+	
+	
+</div>
+for your php file you need <code>&lt;?php header('Access-Control-Allow-Origin: *');?&gt;  </code>on top head
+<div id="contain">
+<pre><div id="txtHint"><b>Ready.</b></div></pre>
+</div>
+<script>
+var xmlhttp;
+function call(task)
+{
+	startwait();
+xmlhttp=GetXmlHttpObject();
+if (xmlhttp==null)
+  {
+  alert ("Browser does not support HTTP Request");
+  return;
+  }
+var url=task;
+xmlhttp.onreadystatechange=stateChanged;
+xmlhttp.open("GET",url,true);
+xmlhttp.send(null);
+}
+
+function stateChanged()
+{
+if (xmlhttp.readyState==0) document.title="The request is not initialized";
+if (xmlhttp.readyState==1) document.title="The request has been set up";
+if (xmlhttp.readyState==2) document.title="The request has been sent";
+if (xmlhttp.readyState==3) document.title="The request is not initialized";
+if (xmlhttp.readyState==4) document.title="Welcome";
+if (xmlhttp.responseText) 
+	{
+		b=xmlhttp.responseText;
+		document.getElementById("txtHint").innerHTML=b;
+	}
+}
+
+function GetXmlHttpObject()
+{
+	if (window.XMLHttpRequest)
+	{
+	// code for IE7+, Firefox, Chrome, Opera, Safari
+	return new XMLHttpRequest();
+	}
+if (window.ActiveXObject)
+	{
+	// code for IE6, IE5
+	return new ActiveXObject("Microsoft.XMLHTTP");
+	}
+return null;
+}
+
+function startwait()
+{
+// document.getElementById('txtHint').innerHTML="Processing...";
+	document.getElementById("txtHint").innerHTML="<span style='cursor: wait'>Connecting...</span>";
+}
+
+</script>
